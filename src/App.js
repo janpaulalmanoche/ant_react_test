@@ -12,6 +12,7 @@ import Dashboard from "./components/pages/Dashboard";
 import Login from "./components/pages/Login";
 import User from "./components/User";
 import Product from "./components/Product";
+
 const App = ({ children }) => {
   const { Header, Content } = Layout;
 
@@ -19,35 +20,12 @@ const App = ({ children }) => {
   const [user, setUser] = useState({});
 
   return (
-    <div>
-      <BrowserRouter>
-        <Switch>
-          {/* <Route
-            path="/login"
-            render={(props) => (
-              <Login {...props} loggedInStatus={loggedInStatus} />
-            )}
-          />
-
-          {localStorage.getItem("token") ? (
-            <Route
-            
-              path="/"
-              // render={(props) => (
-              //   <Dashboard {...props} loggedInStatus={loggedInStatus} />
-              // )}
-              component={Dashboard} 
-            />
-          ) : (
-            <Redirect to="/login" />
-          )} */}
-
-          <Route exact path="/" component={Dashboard} />
-          <Route path="/users" component={User} />
-          <Route path="/products" component={Product} />
-        </Switch>
-      </BrowserRouter>
-    </div>
+    <Switch>
+      <Route exact path="/" component={Dashboard} />
+      <Route path="/login" component={Login} />
+      <Route path="/users" component={User} />
+      <Route path="/products" component={Product} />
+    </Switch>
   );
 };
 

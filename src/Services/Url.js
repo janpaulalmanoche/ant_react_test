@@ -16,6 +16,10 @@ export const login = (email, password) => {
   });
 };
 
+export const logout = () => {
+  return request.post(url + "/logout");
+};
+
 // roles routes
 export const roles = () => {
   return request.get(url + "/roles");
@@ -60,20 +64,43 @@ export const fetch_users = () => {
   return request.get(url + "/users");
 };
 
-export const create_users = (name, address, contact_no, role_id) => {
+export const fetch_user = (user_id) => {
+  return request.get(url + "/users/" + user_id);
+};
+
+export const create_users = (
+  name,
+  email,
+  password,
+  address,
+  contact_no,
+  role_id
+) => {
   return request.post(url + "/users", {
     name: name,
+    email: email,
+    password: password,
     address: address,
     contact_no: contact_no,
     role_id: role_id,
   });
 };
 
-export const update_users = (user_id, name, address, contact_no, role_id) => {
-  return request.update(url + "/users/" + user_id, {
+export const update_users = (
+  user_id,
+  name,
+  email,
+  password,
+  address,
+  contact_no,
+  role_id
+) => {
+  return request.patch(url + "/users/" + user_id, {
     name: name,
+    email: email,
+    password: password,
     address: address,
-    contact_no: contact_no, 
+    contact_no: contact_no,
     role_id: role_id,
   });
 };

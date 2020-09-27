@@ -84,3 +84,15 @@
 .user_table{
   margin-top: 22px
 }
+
+.input_u{
+  margin-bottom: 13px;
+}
+
+.first{
+  height: 196px !important;
+}
+
+.ant-image-img{
+  border-radius: 50% !important;
+}

@@ -5,6 +5,7 @@ import axios from "axios";
 import { withRouter } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import {login} from '../../Services/Url';
+import history from '../../history'
 const Login = () => {
   const [isLoading, setLoading] = useState(false);
   const [errorMsg, setErrMsg] = useState();
@@ -25,21 +26,20 @@ const Login = () => {
 
 
   const onFinish = (values) => {
-    login(email,password).then( (r)=>{
-    openNotification("Hi!","Your'e signed in. Welcome!!")
-      console.log(r.data)
-    localStorage.setItem("token", r.data.access_token);
-    window.location = "/";
-      
-    }).catch( (e)=>{
-      warning()
-      // alert(e.message);
-    });
+    history.push('/')
+   
+
+    // login(email,password).then( (r)=>{
+
+    // openNotification("Hi!","Your'e signed in. Welcome!!")
+    //  history.push('/')
+    // localStorage.setItem("token", r.data.access_token);
+    // // localStorage.setItem("user_email", r.data.user.email);
+    // }).catch( (e)=>{
+    //   message.error('Invalid Credentials, Please Try Again');
+    // });
   };
 
-  const warning = () => {
-    message.error('Invalid Credentials, Please Try Again');
-  };
 
 
   return (

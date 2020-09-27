@@ -25,18 +25,7 @@ import axios from "axios";
 const RolePermission = () => {
   const { Panel } = Collapse;
   const [permissions__, setPermission] = useState([]);
-  const [roles_, setRoles] = useState([
-    // {
-    //   id: 1,
-    //   name: "loading",
-    //   permissions: [
-    //     {
-    //       id: 1,
-    //       name: "loading",
-    //     },
-    //   ],
-    // },
-  ]);
+  const [roles_, setRoles] = useState([]);
 
   const [modal_, setModal] = useState(false);
 
@@ -217,7 +206,11 @@ const RolePermission = () => {
 
   useEffect(() => {
     fetch();
-    fetch_permission();
+    sessionStorage.setItem("past_count", 0);
+  }, []);
+
+  useEffect(() => {
+        fetch_permission();
     sessionStorage.setItem("past_count", 0);
   }, []);
 

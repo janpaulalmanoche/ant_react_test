@@ -3,7 +3,7 @@ import MainLayout from "../layouts/MainLayout";
 import RolePermission from "../RolePermission";
 import { notification } from 'antd';
 
-const Dashboard = ({loggedInStatus}) => {
+const Dashboard = () => {
 
   useEffect ( ()=>{
   },[])
