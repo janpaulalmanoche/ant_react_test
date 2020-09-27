@@ -53,3 +53,27 @@ export const assign_permission = (role_id, permission_id) => {
 export const fetch_permission_ = () => {
   return request.get(url + "/permissions");
 };
+
+// users
+
+export const fetch_users = () => {
+  return request.get(url + "/users");
+};
+
+export const create_users = (name, address, contact_no, role_id) => {
+  return request.post(url + "/users", {
+    name: name,
+    address: address,
+    contact_no: contact_no,
+    role_id: role_id,
+  });
+};
+
+export const update_users = (user_id, name, address, contact_no, role_id) => {
+  return request.update(url + "/users/" + user_id, {
+    name: name,
+    address: address,
+    contact_no: contact_no, 
+    role_id: role_id,
+  });
+};

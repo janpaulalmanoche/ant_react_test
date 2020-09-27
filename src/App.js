@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { BrowserRouter, Switch, Route, Redirect, Router } from "react-router-dom";
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Redirect,
+  Router,
+} from "react-router-dom";
 import "./App.css";
 import { Layout } from "antd";
 import Dashboard from "./components/pages/Dashboard";
@@ -16,17 +22,16 @@ const App = ({ children }) => {
     <div>
       <BrowserRouter>
         <Switch>
-          <Route
-            exact
+          {/* <Route
             path="/login"
             render={(props) => (
               <Login {...props} loggedInStatus={loggedInStatus} />
             )}
           />
 
-          {/* {localStorage.getItem("token") ? (
+          {localStorage.getItem("token") ? (
             <Route
-              exact
+            
               path="/"
               // render={(props) => (
               //   <Dashboard {...props} loggedInStatus={loggedInStatus} />
@@ -37,10 +42,9 @@ const App = ({ children }) => {
             <Redirect to="/login" />
           )} */}
 
-          <Route exact path="/users" component={User} />
           <Route exact path="/" component={Dashboard} />
-
-          <Route exact path="/products" component={Product} />
+          <Route path="/users" component={User} />
+          <Route path="/products" component={Product} />
         </Switch>
       </BrowserRouter>
     </div>
