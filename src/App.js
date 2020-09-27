@@ -24,7 +24,7 @@ const App = ({ children }) => {
             )}
           />
 
-          {localStorage.getItem("token") ? (
+          {/* {localStorage.getItem("token") ? (
             <Route
               exact
               path="/"
@@ -35,9 +35,10 @@ const App = ({ children }) => {
             />
           ) : (
             <Redirect to="/login" />
-          )}
+          )} */}
 
           <Route exact path="/users" component={User} />
+          <Route exact path="/" component={Dashboard} />
 
           <Route exact path="/products" component={Product} />
         </Switch>

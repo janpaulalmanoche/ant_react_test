@@ -1,22 +1,17 @@
-import { Breadcrumb, Table, Button ,Space} from "antd";
+import { Breadcrumb, Table, Button, Space } from "antd";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 const User = () => {
-  const dataSource = [
-    {
-      key: "1",
-      name: "Mike",
-      age: 32,
-      address: "10 Downing Street",
-    },
-    {
-      key: "2",
-      name: "John",
-      age: 42,
-      address: "10 Downing Street",
-    },
-  ];
+  const [users, setUsers] = useState([]);
+
+  const dataSource = users.map((user, idx) => ({
+    key: idx,
+    id: user.id,
+    name: user.name,
+    address: user.address,
+    contact_no: user.contact_no,
+  }));
 
   const columns = [
     {
@@ -35,6 +30,11 @@ const User = () => {
       key: "address",
     },
     {
+      title: "Role",
+      dataIndex: "role",
+      key: "role",
+    },
+    {
       title: "Contact No.",
       dataIndex: "contact_no",
       key: "contact_no",
@@ -50,6 +50,11 @@ const User = () => {
       ),
     },
   ];
+
+
+  useEffect( ()=>{
+
+  },[]);
 
   return (
     <MainLayout>
