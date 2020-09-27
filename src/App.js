@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter, Switch, Route, Redirect, Router } from "react-router-dom";
+import "./App.css";
+import { Layout } from "antd";
+import Dashboard from "./components/pages/Dashboard";
+import Login from "./components/pages/Login";
+import User from "./components/User";
+import Product from "./components/Product";
+const App = ({ children }) => {
+  const { Header, Content } = Layout;
 
-function App() {
+  const [loggedInStatus, SetLoggedInStatus] = useState("not_logged_in");
+  const [user, setUser] = useState({});
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Switch>
+          <Route
+            exact
+            path="/login"
+            render={(props) => (
+              <Login {...props} loggedInStatus={loggedInStatus} />
+            )}
+          />
+
+          {localStorage.getItem("token") ? (
+            <Route
+              exact
+              path="/"
+              // render={(props) => (
+              //   <Dashboard {...props} loggedInStatus={loggedInStatus} />
+              // )}
+              component={Dashboard} 
+            />
+          ) : (
+            <Redirect to="/login" />
+          )}
+
+          <Route exact path="/users" component={User} />
+
+          <Route exact path="/products" component={Product} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;

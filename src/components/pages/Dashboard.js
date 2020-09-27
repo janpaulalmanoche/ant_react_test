@@ -1,0 +1,16 @@
+import React, { useState,useEffect } from "react";
+import MainLayout from "../layouts/MainLayout";
+import RolePermission from "../RolePermission";
+import { notification } from 'antd';
+
+const Dashboard = ({loggedInStatus}) => {
+
+  useEffect ( ()=>{
+  },[])
+
+  return <MainLayout>
+     <RolePermission/>
+      </MainLayout>;
+};
+
+export default Dashboard;

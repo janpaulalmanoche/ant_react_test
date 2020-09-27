@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
+@import '~antd/dist/antd.css';
+
+.container_{
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ant-layout-sider-children{
+  padding-top: 60px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ 
+.ant-layout-header span{
+  color:white;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.login{
+  width: 29%;
+    border: solid 1px #00000017
+}
+
+#normal_login{
+  padding-left: 31px;
+    padding-right: 31px;
+}
+
+.login_wrapper{
+  height: 60vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.login__container h1 {
+  padding-top: 13px;
+}
+
+/* role permission */
+.user_{
+  /* background-color: red; */
+  margin-left: 20px;
+  flex:1;
+}
+
+.box_containter{
+  /* background-color: brown; */
+  display: flex;
+}
+
+.roles{
+  flex: 1;
+}
+
+.head_{
+  background-color: #1c33e794;
   color: white;
+  border-radius: 7px;
+  height: 41px;
+  margin-bottom: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  align-items: center;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.hh{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ll{
+  width: 3px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 16px;
+}
+
+/* ending role permission */
+
+.user_table{
+  margin-top: 22px
 }
