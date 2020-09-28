@@ -5,12 +5,12 @@ import App from "./App"
 import * as serviceWorker from "./serviceWorker"
 import history from "./history"
 
-import { Router } from "react-router-dom"
+import { HashRouter, Router,BrowserRouter } from "react-router-dom"
 
 ReactDOM.render(
-  <Router history={history}>
+  <BrowserRouter history={history}>
     <App />
-  </Router>,
+  </BrowserRouter>,
   document.getElementById("root")
 )
 

@@ -26,18 +26,15 @@ const Login = () => {
 
 
   const onFinish = (values) => {
-    history.push('/')
-   
-
-    // login(email,password).then( (r)=>{
-
-    // openNotification("Hi!","Your'e signed in. Welcome!!")
-    //  history.push('/')
-    // localStorage.setItem("token", r.data.access_token);
-    // // localStorage.setItem("user_email", r.data.user.email);
-    // }).catch( (e)=>{
-    //   message.error('Invalid Credentials, Please Try Again');
-    // });
+    // history.push('/')
+    login(email,password).then( (r)=>{
+    openNotification("Hi!","Your'e signed in. Welcome!!")
+     window.location = "/";
+    localStorage.setItem("token", r.data.access_token);
+    localStorage.setItem("user_email", r.data.user.email);
+    }).catch( (e)=>{
+      message.error('Invalid Credentials, Please Try Again');
+    });
   };
 
 

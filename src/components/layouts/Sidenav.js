@@ -55,12 +55,8 @@ const SideNav = (props) => {
           <Link to="/users"> User </Link>
         </Menu.Item>
 
-        <Menu.Item key="4" icon={<UploadOutlined />}>
-          Product
-        </Menu.Item>
-
         <Menu.Item key="5" icon={<LogoutOutlined />} onClick={() => logout_()}>
-          Product
+          <Link to="/login">Logout </Link>
         </Menu.Item>
       </Menu>
     </Sider>
